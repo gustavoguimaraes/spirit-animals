@@ -8,6 +8,13 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  		<script>
+  		$(function() {
+    		$( "#crud" ).accordion({collapsible: true, active: false});
+  		});
+  		</script>
 
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,12 +59,40 @@
 			So, for the sake of explanation, let's pretend that databases speak Spanish and you, the user, only speak English. Fortunately you have two friends, one who knows English and German (his name is Ruby), and another who knows German and Spanish (her name is SQL). By telephone-lining, you, the user, are able to speak at length with the database, because you have the people to translate your question into database's language.
 			<br></br>
 			Typically web apps respond to user input and do one of four things with data in the database:
-				<ol>
-					<li>Create</li>
-					<li>Read</li>
-					<li>Update</li>
-					<li>Delete</li>
-				</ol>
+			
+								 <ol>
+                                        <li>Create</li>
+                                        <li>Read</li>
+                                        <li>Update</li>
+                                        <li>Delete</li>
+                                </ol>
+
+              <br></br>
+             <p>Also known as CRUD</p>
+               <br></br>
+
+			<div id = "crud">
+				<h3>C</h3>
+				<div> 
+					<p>INSERT INTO table_name (1, 2) VALUE (‘value_1’, ‘value_2’)</p>
+				</div>
+				
+				<h3>R</h3>
+				<div> 
+					<p>SELECT * FROM table_name WHERE value<br>SELECT 1, 2 FROM table_name WHERE id=value</p>
+				</div>
+				
+				<h3>U</h3>
+				<div> 
+					<p>UPDATE table_name SET name=’new_name’ WHERE id=15</p>
+				</div>
+				
+				<h3>D</h3>
+				<div> 
+					<p>DELETE from table_name WHERE id=value</p>
+				</div>
+			</div>
+
 			</p>
 		</section>
 		

@@ -51,7 +51,7 @@ section a { /* stylng anchor links in a section */
 	margin-left: 25%;
 }
 
-#SQL p, #SQL h2, #SQL ol {
+#SQL p, #SQL h2, #SQL br, #SQL div, #SQL ol {
 	width: 500px;
 	margin-left: 25%;
 }
