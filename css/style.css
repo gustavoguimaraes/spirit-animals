@@ -30,6 +30,7 @@ figcaption {/* selects all ,fig caption elements*/
 	text-align: center;
 	color: white;
 }
+
 #logo h2 { /* selects only the H2s within the element that is logo */
  	font: normal 16px/1.5em 'Helvetica', sans-serif;
  	text-align: center;
@@ -58,4 +59,17 @@ section a { /* stylng anchor links in a section */
 
 #details a:active { /*selects links while mouse button is depressed (clicking) */
 	color: aqua;
+}
+
+/*#SQL {
+	background: blue;
+}*/
+
+#SQL figure img, figcaption {
+	margin-left: 25%;
+}
+
+#SQL p, h2, ol {
+	width: 500px;
+	margin-left: 25%;
 }
