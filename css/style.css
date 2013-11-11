@@ -5,10 +5,11 @@ p { /* selects all <p> */
 	font-size: 16px;/* px, pt (avoid, browsers interpret it differently), % (100% in relation to current size of text or default if you didn't specify), em */
 	line-height: 1.5em;
 }
+
 figcaption {/* selects all ,fig caption elements*/
 	font: normal 12px/1.5em 'Helvetica', sans-serif;
 	color: #777; /* 16 color names, hexidecimal colors (0-F, six digits or three), rgba values */
-	text-align: right;
+	text-align: left;
 }
 
 /* ID Selector */

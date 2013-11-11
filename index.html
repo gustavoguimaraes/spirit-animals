@@ -1,13 +1,19 @@
-<!doctype html>
+...../<!doctype html>
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="keywords" content="BK000, Flatiron, Spirit Animals, Spirit, Animal, playful, team, teamwork">
+		<meta name="keywords" content="BK000, Flatiron, Spirit Animals, Spirit, Animal, playful, team, teamwork, sql, learnsql">
 		<title>The Spirit Animals - A BK000 Flatiron Team</title>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
-
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  		<script>
+  		$(function() {
+    		$( "#crud" ).accordion({collapsible: true, active: false});
+  		});
+  		</script>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -35,7 +41,27 @@
 
 		</header>
 		<!--/////////// Ends Header //////////-->
-
+			<div id = "crud">
+				<h3>C</h3>
+				<div> 
+					<p>INSERT INTO table_name (1, 2) VALUE (‘value_1’, ‘value_2’)</p>
+				</div>
+				
+				<h3>R</h3>
+				<div> 
+					<p>SELECT * FROM table_name WHERE value<br>SELECT 1, 2 FROM table_name WHERE id=value</p>
+				</div>
+				
+				<h3>U</h3>
+				<div> 
+					<p>UPDATE table_name SET name=’new_name’ WHERE id=15</p>
+				</div>
+				
+				<h3>D</h3>
+				<div> 
+					<p>DELETE from table_name WHERE id=value</p>
+				</div>
+			</div>
 		<!--/////////// Info //////////-->
 		<section>
 			<figure>
@@ -66,11 +92,11 @@
 
 		<section>
 			<figure>
-				<img src="pic4.jpg" alt="Describe animal" title="Give a title" width="200" height="200">
-				<figcaption>Put caption here</figcaption>
+				<img src="images/crow.jpg" alt="Crow" title="Crow" width="200" height="200">
+				<figcaption>CrowCrowCrow</figcaption>
 			</figure>
-			<h2>Hiya!</h2>
-			<p>Content</p>
+			<h2>Pooja is a crow!</h2>
+			<p>As a Crow, you are analytical, adaptable, and exceedingly clever. You like solving problems, sharing a hearty laugh with friends, and most of all, enjoying a good meal. Your inquisitive, philosophical nature leads you to constantly question authority and the status quo, sometimes just for the sake of asking, "Why?"</p>
 		</section>
 		<!--/////////// Ends Info //////////-->
 
