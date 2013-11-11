@@ -16,13 +16,10 @@ figcaption {/* selects all ,fig caption elements*/
 	color: #777; /* 16 color names, hexidecimal colors (0-F, six digits or three), rgba values */
 	text-align: left;
 }
-
-/* ID Selector */
-#logo { /* selects the element with an id-"logo" */
+header {
 	background-image: url("../images/ForestLight.jpg");
 	background-position: right 200px bottom 270px;
 }
-/* Descendent Selector (apply all children) */
 
 #logo h1 { /* selects only the H1s within the element that is logo */
 	font-family: 'Noto Sans', sans-serif;
@@ -37,6 +34,13 @@ figcaption {/* selects all ,fig caption elements*/
  	color: white;
 }
 
+#logo h2 a {
+	color: white;
+	text-decoration: none;
+}
+#logo h2 a:hover {
+	text-decoration: underline;
+}
 section a { /* stylng anchor links in a section */
 	color: #555;
 	text-decoration: underline; /* gets rid of underline if you say none */
