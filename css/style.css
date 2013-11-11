@@ -1,5 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Sancreek);
 
+body {
+	width: 960px;
+	margin: auto;
+	background-color: #d3d3d3;
+}
+
 p { /* selects all <p> */
 	font: normal 16px/1.5em 'Helvetica', sans-serif;
 	font-size: 16px;/* px, pt (avoid, browsers interpret it differently), % (100% in relation to current size of text or default if you didn't specify), em */
@@ -8,20 +14,26 @@ p { /* selects all <p> */
 figcaption {/* selects all ,fig caption elements*/
 	font: normal 12px/1.5em 'Helvetica', sans-serif;
 	color: #777; /* 16 color names, hexidecimal colors (0-F, six digits or three), rgba values */
-	text-align: right;
+	text-align: left;
 }
 
 /* ID Selector */
 #logo { /* selects the element with an id-"logo" */
-	background: aqua;
+	background-image: url("../images/ForestLight.jpg");
+	background-position: right 200px bottom 270px;
 }
 /* Descendent Selector (apply all children) */
 
 #logo h1 { /* selects only the H1s within the element that is logo */
-	font-family: 'Sancreek', cursive;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 45px;
+	text-align: center;
+	color: white;
 }
 #logo h2 { /* selects only the H2s within the element that is logo */
  	font: normal 16px/1.5em 'Helvetica', sans-serif;
+ 	text-align: center;
+ 	color: white;
 }
 
 section a { /* stylng anchor links in a section */
