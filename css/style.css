@@ -46,34 +46,11 @@ section a { /* stylng anchor links in a section */
 	text-decoration: underline; /* gets rid of underline if you say none */
 }
 
-/* pseudo selectors */
-
-#details a:link { /* selects links during their default state (un-touched) */
-	color: black;
-	text-decoration: none;
-}
-#details a:visited { 
-	color: #777;
-	text-decoration: none;
-}
-#details a:hover { /* selects links that have a cursor all up on them */
-	color: black;
-	text-decoration: underline;
-}
-
-#details a:active { /*selects links while mouse button is depressed (clicking) */
-	color: aqua;
-}
-
-/*#SQL {
-	background: blue;
-}*/
-
-#SQL figure img, figcaption {
+#SQL figure img, #SQL figcaption {
 	margin-left: 25%;
 }
 
-#SQL p, h2, ol {
+#SQL p, #SQL h2, #SQL ol {
 	width: 500px;
 	margin-left: 25%;
 }
