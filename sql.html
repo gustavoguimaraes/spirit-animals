@@ -11,10 +11,78 @@
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   		<script>
-  		$(function() {
-    		$( "#crud" ).accordion({collapsible: true, active: false});
-  		});
-  		</script>
+  $(function() {
+    $( "#crud" ).accordion({
+      event: "click hoverintent"
+    });
+  });
+ 
+  /*
+   * hoverIntent | Copyright 2011 Brian Cherne
+   * http://cherne.net/brian/resources/jquery.hoverIntent.html
+   * modified by the jQuery UI team
+   */
+  $.event.special.hoverintent = {
+    setup: function() {
+      $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    teardown: function() {
+      $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    handler: function( event ) {
+      var currentX, currentY, timeout,
+        args = arguments,
+        target = $( event.target ),
+        previousX = event.pageX,
+        previousY = event.pageY;
+ 
+      function track( event ) {
+        currentX = event.pageX;
+        currentY = event.pageY;
+      };
+ 
+      function clear() {
+        target
+          .unbind( "mousemove", track )
+          .unbind( "mouseout", clear );
+        clearTimeout( timeout );
+      }
+ 
+      function handler() {
+        var prop,
+          orig = event;
+ 
+        if ( ( Math.abs( previousX - currentX ) +
+            Math.abs( previousY - currentY ) ) < 7 ) {
+          clear();
+ 
+          event = $.Event( "hoverintent" );
+          for ( prop in orig ) {
+            if ( !( prop in event ) ) {
+              event[ prop ] = orig[ prop ];
+            }
+          }
+          // Prevent accessing the original event since the new event
+          // is fired asynchronously and the old event is no longer
+          // usable (#6028)
+          delete event.originalEvent;
+ 
+          target.trigger( event );
+        } else {
+          previousX = currentX;
+          previousY = currentY;
+          timeout = setTimeout( handler, 100 );
+        }
+      }
+ 
+      timeout = setTimeout( handler, 100 );
+      target.bind({
+        mousemove: track,
+        mouseout: clear
+      });
+    }
+  };
+  </script>
 
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,11 +120,11 @@
 			</figure>
 			<h2>SQL as a Squirrel</h2>
 
-			<p>SQL stands for Structured Query Language. Don't worry, it's not as diffiuclt as it sounds.
+			<p>SQL stands for Structured Query Language. Don't worry, it's not as difficult as it sounds.
 			<br></br>
-			In order for a web application to be useful it needs to store, access and organize data. A database performs these tasks. It is difficult to communicate directly with a database because a database speaks a different language than the normal person / user does. This is why we use intermediaries like Ruby and SQL.
+			In order for a web application to be useful it needs to store, access and organize data. A database performs these tasks. It is difficult to communicate directly with a database because a database speaks a different language than a normal person. This is why we use intermediaries like Ruby and SQL.
 			<br></br>
-			So, for the sake of explanation, let's pretend that databases speak Spanish and you, the user, only speak English. Fortunately you have two friends, one who knows English and German (his name is Ruby), and another who knows German and Spanish (her name is SQL). By telephone-lining, you, the user, are able to speak at length with the database, because you have the people to translate your question into database's language.
+			So, for the sake of explanation, let's pretend that databases speak Spanish and you, the user, only speak English. Fortunately you have two friends, one who knows English and German (his name is Ruby), and another who knows German and Spanish (her name is SQL). By telephone-lining, you, the user, are able to communicate with the database.
 			<br></br>
 			Typically web apps respond to user input and do one of four things with data in the database:
 			
@@ -68,36 +136,40 @@
                                 </ol>
 
               <br></br>
-             <p>Also known as CRUD</p>
+             <p>Hey, see how that also spells out CRUD?? So exciting! Let's see it in action.<br>Here's our table.</p>
              <img src="images/tablenopooja.png" id="nopooja">
+             <p><em>(Click on the headers to see how to perform each command)</em></p>
                <br></br>
 
 			<div id = "crud">
-				<h3>C</h3>
+				<h3>Let's add Pooja to the table (Create)</h3>
 				<div> 
 					<p>INSERT INTO spirit_animals (Name, Animal) VALUE (‘Pooja’, ‘Crow’)</p>
-					<img src="images/tablenopooja.png">
+					<img src="images/tablewithpooja.png">
 				</div>
 				
-				<h3>R</h3>
+				<h3>I'm curious: what is Gustavo's spirit animal? (Read)</h3>
 				<div> 
-					<p>SELECT * FROM spirit_animals WHERE Sarah</p>
-					<img src="images/tablenopooja.png">
+					<p>SELECT * FROM spirit_animals WHERE Gustavo</p>
+					<img src="images/tabler.png">
 				</div>
 				
-				<h3>U</h3>
+				<h3>I want to change Sarah's spirit animal to a bear (Update)</h3>
 				<div> 
 					<p>UPDATE spirit_animals SET Animal=’Bear’ WHERE name='Sarah'</p>
-					<img src="images/tablenopooja.png">
+					<img src="images/tableu.png">
 				</div>
 				
-				<h3>D</h3>
+				<h3>We've decide Katie's got to go (Delete)</h3>
 				<div> 
 					<p>DELETE from spirit_animals WHERE Name='Katie'</p>
-					<img src="images/tablenopooja.png">
+					<img src="images/tabled.png">
 				</div>
 			</div>
 
+			</p>
+			<p>
+				If you want to learn more about SQL, here are a few good resources to check out:<br><a href="http://teamtreehouse.com/library/programming/database-foundations">Treehouse</a><br><a href="http://zetcode.com/db/sqlite/">Zetcode</a>
 			</p>
 		</section>
 		

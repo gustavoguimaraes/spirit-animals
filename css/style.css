@@ -56,6 +56,15 @@ section a { /* stylng anchor links in a section */
 	width: 500px;
 	margin-left: 25%;
 }
+
 #nopooja {
 	margin-left: 25%;
+}
+
+#crud h3, #SQL a {
+	color: blue;
+}
+
+#crud h3:hover, #SQL a:hover {
+	color: yellow;
 }
